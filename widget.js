@@ -55,7 +55,13 @@ function initGenAiChatbot() {
   // Inject config into iframe src
   const scriptUrl = new URL(genaiWidgetScript.src);
   const origin = scriptUrl.origin;
-  const url = `${origin}/chatbot/index.html`;
+  
+  // Dynamically determine the base path from the widget.js script location
+  // Remove the filename (widget.js) to get the directory path
+  const scriptPath = scriptUrl.pathname;
+  const basePath = scriptPath.substring(0, scriptPath.lastIndexOf('/'));
+  
+  const url = `${origin}${basePath}/index.html`;
   const urlWithParams = new URL(url);
 
   urlWithParams.searchParams.append("config", JSON.stringify(config));
