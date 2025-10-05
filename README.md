@@ -11,6 +11,8 @@ This repository is a fork of the DigitalOcean Chatbot agent, with multiple optio
  - Automatic translations on button text
  - Responsive Button
 
+ ![In action](repo_assets/chatbot-demo.gif)
+
 ## Table of Contents
 
 - [Quick Start](#quick-start)
